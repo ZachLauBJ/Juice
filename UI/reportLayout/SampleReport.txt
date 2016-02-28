@@ -1,0 +1,97 @@
+<!DOCTYPE html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">
+<head>
+<meta charset=\"utf-8\">
+<title>自动化测试平台</title>
+</head>
+<body>
+<h2 style=\"margin-bottom: 5px;\">
+#juice_projectName
+</h2>
+<span style=color:red; >（测试结束时间：
+#juice_testEndTime
+）</span>
+<div id=\"main\" style=\"height:330px\"></div>
+<script src=\"http://echarts.baidu.com/build/dist/echarts.js\"></script>
+<script type=\"text/javascript\">
+require.config({paths: {echarts: 'http://echarts.baidu.com/build/dist'}});
+require(
+['echarts','echarts/chart/gauge','echarts/chart/pie'],
+function (ec){
+var myChart = ec.init(document.getElementById('main'));
+var option ={
+color : ['rgba(55, 200, 100, 1)','rgba(255, 200, 0, 1)','rgba(255, 69, 0, 1)'],
+title : {text: '用例占比统计',subtext: '      悬浮查看详情',x:'650'},tooltip : {trigger: 'item',formatter: \"{b} : {c} ({d}%)\"},
+legend: {orient : 'vertical',x : '1100',data:['成功','跳过','失败']},
+text.append("toolbox: {");
+show : true,
+feature : {
+saveAsImage : {show: true}
+},
+showTitle:false
+},
+calculable : true,
+series : [
+{
+name:'测试通过率',
+type:'gauge',
+title : {
+show : 'fasle',
+textStyle: {
+fontWeight: 'bolder',color:'#FF0000',fontSize : '18'
+}
+},
+detail : {formatter:'{value}%'},
+center: ['20%','55%'],
+radius:['0','85%'],
+data:[{value: 0,name:'测试通过率'}]
+},
+{
+name:'用例统计',
+type:'pie',
+radius : ['40%','70%'],
+center: ['70%', '48%'],
+itemStyle : {
+normal : {
+label : {
+show : false
+},
+labelLine : {
+show : false
+}
+},
+emphasis : {
+label : {
+show : true,
+position : 'center',
+textStyle : {
+fontSize : '30',
+fontWeight : 'bold'
+}
+}
+}
+},	
+data:[
+{value:0, name:'成功'},
+{value:0, name:'跳过'},
+{value:0, name:'失败'}
+]
+}
+]
+};
+option.series[0].data[0].value=#juice_passRate;
+option.series[1].data[0].value=#juice_passedNumber;
+option.series[1].data[1].value=#juice_skippedNumber;
+option.series[1].data[2].value=#juice_failedNumber;
+myChart.setOption(option);
+}
+);
+</script>
+<table width=\"90%\" cellpadding=\"5\" cellspacing=\"1\">
+<tbody><tr style=\"background-color: #eaf0f7;\">
+<td width=\"90%\">
+<font style=\"font-weight:bold\" size=\"3\" color=\"red\" weight='bold'>测试日志信息</font>
+</td>
+</tr>
+#juice_customLog
+</tbody></table>
+</body>

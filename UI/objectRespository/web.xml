@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 页面对象配置文档
+
+object所有子节点中：一级节点名称为页面简称，二级节点名称为页面具体对象类型简称
+
+		   		      页面对象节点，type为对象识别属性。value为识别属性的具体值
+ -->
+
+<对象>
+	
+	<首页>
+		<目的地> <type>id</type> <value>HD_CityName</value> </目的地>
+		<关键词> <type>id</type> <value>HD_TxtKeyword</value> </关键词>
+		<搜索> <type>id</type> <value>HD_Btn</value> </搜索>
+		<精选产品>  <type>xpath</type> <value>//div[@class='product-bd']//div[@class='product-item']</value> </精选产品>
+	</首页>
+	
+	<酒店搜索结果页>
+		<结果总数> <type>id</type> <value>lblAmount</value> </结果总数>
+	</酒店搜索结果页>
+
+</对象>

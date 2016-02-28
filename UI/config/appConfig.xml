@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 全局配置信息 -->
+
+<config>
+
+	<general>  
+    	<!--Automation类型:appium、selendroid-->
+   	 	<automationName>appium</automationName>
+    
+    	<!--待测设备平台类型:Android、IOS-->
+    	<platformName>Android</platformName>
+
+		<!--Appium服务启动的最长等待时间 :单位为秒-->
+    	<appiumServerWaitTime>10</appiumServerWaitTime>   
+    
+    	<!--Appium Driver参数 :待测APP安装包路径-->
+    	<appPath>AY_91_Android.apk</appPath>
+        
+		<!--Appium Driver参数 : server等待新命令时间(单位：s)-->
+		<newCommandTimeout>60</newCommandTimeout>
+	
+		<!--Appium Driver参数 :是否重置app状态 -->
+		<noReset>true</noReset>
+	
+		<!--Appium Driver参数 : 卸载app以清除缓存-->
+		<fullReset>false</fullReset>	
+	</general>  
+	
+	<android>
+		<!--Appium Driver参数 :APP包名-->
+    	<packageName>com.aoyou.android</packageName>
+    
+    	<!--Appium Driver参数 :默认启动活动名-->
+    	<activityName>com.aoyou.android.view.common.MainActivity</activityName>
+    	
+    	<!--每个用例起始进入的默认启动活动名-->
+    	<startActivityName>view.common.HomeActivity</startActivityName>
+    	
+    	<!--Appium Driver参数 :设置等待一个模拟器或真机准备就绪的超时时间:单位s-->
+    	<deviceReadyTimeout>5</deviceReadyTimeout>
+    	
+		<!--Appium Driver参数 : 启用unicode输入法-->
+		<unicodeKeyboard>true</unicodeKeyboard>
+	</android>
+
+	<ios>
+	
+	</ios>
+	  
+	<!--对象查找的最长等待时间，单位为s -->
+    <objectWaitTime>15</objectWaitTime>
+      
+    <!--本次运行依赖的页面对象库路径 --> 
+    <objectRespository>objectRespository/app.xml</objectRespository>
+        
+    <!--失败用例重复执行次数--> 
+    <retryTimes>2</retryTimes>
+    
+    
+     <!--项目测试结束后，发送邮件的相关配置 -->  
+    <mail>   
+    	 <!--发件人SMTP服务器地址-->  	
+    	 <SMTPserver></SMTPserver>
+    	
+    	 <!--发件人邮箱地址 -->  
+    	<from></from>
+    	
+    	<!--发件人邮箱有户名 -->  
+    	<username></username>
+    	
+    	<!--发件人邮箱密码  coyegrjyxyxpeahv-->  
+    	<password></password>
+    	
+    	<!--收件人邮箱地址，多个地址时以英文逗号分隔 -->  
+    	<to></to>
+
+    	<!--抄送人邮箱地址，多个地址时以英文逗号分隔 -->  
+    	<copyTo></copyTo>
+    	
+    	<!--需要添加的附件文件路径 -->  
+    	<filename></filename>
+    	
+    	<!--邮件主题 --> 
+    	<subject>自动化测试平台 Test Report    【此邮件为系统自动发送，请勿回复】</subject>
+    	
+    	<!--测试项目名称 --> 
+    	<projectName>APP-Android</projectName>      	
+    </mail>
+    
+</config>

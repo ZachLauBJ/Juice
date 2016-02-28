@@ -1,0 +1,71 @@
+﻿<suite name="Juice" parallel="tests" thread-count="2">
+
+	<listeners>
+	 	 <listener class-name="org.juice.listener.ExecutionListener" />
+	     <listener class-name="org.juice.listener.ReportListener" />
+	</listeners>
+	
+ 	<test name="三星" preserve-order="true">
+	
+	  <parameter name = "udid" value = "192.168.56.101:5555"/>
+      <parameter name = "platformVersion" value = "4.4.4"/>
+
+	  <classes>
+		<class name="test.AppCase001"/>
+		<class name="test.AppCase002"/>
+	  </classes>
+	  
+	</test>
+	
+	<test name="小米" preserve-order="true">
+
+	  <parameter name = "udid" value = "192.168.56.102:5555"/>
+      <parameter name = "platformVersion" value = "4.3"/>
+
+	  <classes>
+		<class name="test.AppCase001"/>
+		<class name="test.AppCase002"/>
+	  </classes>
+	  
+	</test>
+
+	
+	<host>
+		<ip>172.18.2.95</ip>
+		<hostName>www.xxx.com</hostName>
+	</host>
+	
+	<host>
+		<ip>172.18.2.95</ip>
+		<hostName>www.baidu.com</hostName>
+	</host>
+	
+	<test name="FireFox" preserve-order="true">
+		
+	  <parameter name = "testName" value = "FireFox"/>
+	  <parameter name = "browserType" value = "firefox"/>
+	  <parameter name = "browserIndex" value = "1"/>
+
+	  <classes>
+	 	<class name="test.WebCase001"/>
+		<class name="test.WebCase002"/>
+	  </classes>
+	  
+	</test>
+	
+	
+	<test name="IE" preserve-order="true">
+	
+	  <parameter name = "testName" value = "IE"/>
+	  <parameter name = "browserType" value = "ie"/>
+	  <parameter name = "browserIndex" value = "2"/>
+	  
+	  <classes>
+	 	<class name="test.WebCase001"/>
+		<class name="test.WebCase002"/>
+	  </classes>
+	  
+	</test>
+
+	
+</suite>		

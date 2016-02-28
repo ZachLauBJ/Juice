@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 页面对象配置文档
+
+object所有子节点中：一级节点名称为页面简称，二级节点名称为页面具体对象类型简称
+
+		   		      页面对象节点，type为对象识别属性。value为识别属性的具体值
+ -->
+
+<对象>
+
+	<引导页>
+		<开始按钮> <type>xpath</type> <value>//android.widget.Button</value></开始按钮>
+		<引导图> <type>id</type> <value>education_view</value> </引导图>	
+	</引导页>
+	
+	<首页>
+		<顶部搜索框> <type>name</type> <value>目的地/主题/关键字</value> </顶部搜索框>
+		<频道链接> <type>xpath</type> <value>//android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]//android.widget.ImageView</value> </频道链接>
+		<频道页主标题> <type>id</type> <value>base_title_text</value> </频道页主标题>
+	</首页>
+	
+	<搜索页>
+		<目的地输入框> <type>id</type> <value>txtQuery</value> </目的地输入框>
+		<目的地选择项> <type>id</type> <value>txtProductTypeTitle</value> </目的地选择项>
+		<产品>	<type>xpath</type> <value>//android.widget.ListView[@resource-id='android:id/list']/android.widget.LinearLayout</value> </产品>
+		<产品标题> <type>id</type> <value>txt_product_title</value> </产品标题>
+		<产品价格>	<type>id</type> <value>txt_price</value> </产品价格>
+		<产品价格>	<type>id</type> <value>txt_price</value> </产品价格>
+		<产品图片>	<type>id</type> <value>img_product</value> </产品图片>
+	</搜索页>
+
+</对象>

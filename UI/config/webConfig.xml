@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 全局配置信息 -->
+
+<config>
+   
+   	<!-- 单个用例调试时默认启动的浏览器类型  -->
+    <debugBrowser>firefox</debugBrowser>
+    
+	<!-- 浏览器加载的最长等待时间，单位为s -->
+    <browserWaitTime>60</browserWaitTime>
+    
+	 <!--对象查找的最长等待时间，单位为s -->
+    <objectWaitTime>60</objectWaitTime>
+    
+   	 <!--页面加载完成的最长等待时间，单位为s -->
+    <pageWaitTime>60</pageWaitTime>
+    
+     <!--本次运行依赖的页面对象库路径 --> 
+    <objectRespository>objectRespository/web.xml</objectRespository>
+       
+    <!--失败用例重复执行次数--> 
+    <retryTimes>3</retryTimes>
+    
+  
+     <!--项目测试结束后，发送邮件的相关配置 -->  
+    <mail>   
+    	 <!--发件人SMTP服务器地址-->  	
+    	 <SMTPserver></SMTPserver>
+    	
+    	 <!--发件人邮箱地址 -->  
+    	<from></from>
+    	
+    	<!--发件人邮箱有户名 -->  
+    	<username></username>
+    	
+    	<!--发件人邮箱密码  coyegrjyxyxpeahv-->  
+    	<password></password>
+    	
+    	<!--收件人邮箱地址，多个地址时以英文逗号分隔 -->  
+    	<to></to>
+    	
+    	<!--抄送人邮箱地址，多个地址时以英文逗号分隔 -->  
+    	<copyTo></copyTo>
+    	
+    	<!--需要添加的附件文件路径 -->  
+    	<filename></filename>
+    	
+    	<!--邮件主题 --> 
+    	<subject>自动化测试平台 Test Report    【此邮件为系统自动发送，请勿回复】</subject>
+    	    	
+    </mail>
+    
+</config>
